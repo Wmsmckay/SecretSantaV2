@@ -1,8 +1,8 @@
-#Secret Santa Names Picker#
+# Secret Santa Names Picker #
 
 This program will randomize all of your participants for secret santa. It will also send everyone a text messgae with who their person is. You can add in funtionality to send gift ideas.
 
-###Setup###
+### Setup ###
 
 To make this work, you will need to copy the `example.config.py` and `example.members.json` files and remove the "example.". Then add your email and password to `config.py` and decide if you would like to send gift ideas. In the `members.json` file, add in each participants: 
 
