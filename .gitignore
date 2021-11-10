@@ -1,3 +1,5 @@
 members.json
 config.py
-christmasNames.txt
+christmasNamesLog.txt
+.DS_Store
+__pycache__/
