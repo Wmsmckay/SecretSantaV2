@@ -4,12 +4,13 @@ This program will randomize all of your participants for secret santa. It will a
 
 ### Setup ###
 
-To make this work, you will need to copy the `example.config.py` and `example.members.json` files and remove the "example.". Then add your email and password to `config.py` and decide if you would like to send gift ideas. In the `members.json` file, add in each participants: 
+To make this work, you will need to copy the `example.config.py` and `example.members.json` files and remove the "example.". Then add your email and password to `config.py` and decide if you would like to send gift ideas. In the `members.json` file, add in each participant's: 
 
 * name 
 * phone number
 * phone carrier
-* and if you want to control who doesn't get who (for example, you don't want to assign someone themselves and if you don't want to have someone get the same person 2 years in a row) then put that id in the "no list"
+
+If you want to control who doesn't get who (for example, you don't want to assign someone themselves and if you don't want to have someone get the same person 2 years in a row) then put that id in the "no list".
 
 Make sure to __give each participant a unique id__ when adding more people to the list. 
 
