@@ -1,0 +1,31 @@
+{
+    "people": [
+        {
+            "id": 1,
+            "name": "Tim",
+            "number": 1234567890,
+            "carrier": "verizon",
+            "gift ideas": "",
+            "no list": [1],
+            "assignment": 0
+        },
+        {
+            "id": 2,
+            "name": "Greg",
+            "number": 1234567890,
+            "carrier": "att",
+            "gift ideas": "",
+            "no list": [2,3],
+            "assignment": 0
+        },
+        {
+            "id": 3,
+            "name": "Missy",
+            "number": 1234567890,
+            "carrier": "verizon",
+            "gift ideas": "",
+            "no list": [3],
+            "assignment": 0
+        }
+    ]
+}
