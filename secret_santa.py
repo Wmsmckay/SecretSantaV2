@@ -108,8 +108,13 @@ for person in participants:
 	assignment = participants[person["assignment"] - 1]
 	assignmentName = str(assignment["name"])
 	giftIdeas = assignment["gift ideas"]
-	message = (f"Secret Santa {year}\n\nThis is an automated message. {name.upper()}, your assignment is {assignmentName.upper()}.")
-	if config.GIFT_IDEAS:
-		message = message + (f" Some gift ideas are:\n {giftIdeas}")
+	
+	if config.TEST_MODE:
+		message = (f"Secret Santa {year}\n\nThis automated message is a test to make sure {name.upper()} can recieve messages for Secret Santa. Please contact support if you have any questions.")
+	else:
+		message = (f"Secret Santa {year}\n\nThis is an automated message. {name.upper()}, your assignment is {assignmentName.upper()}.")
+		if config.GIFT_IDEAS:
+			message = message + (f" Some gift ideas are:\n {giftIdeas}")
+
 	send(message,number,carrier)
 	time.sleep(3)
