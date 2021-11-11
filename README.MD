@@ -16,4 +16,6 @@ Make sure to __give each participant a unique id__ when adding more people to th
 
 The program sends texts through your email provider so people will get a message from you, but you won't see it. This helps with the anonimity. If someone forgets or you need to debug, a list is generated named `christmasNames.txt` that has everyone's name and assignment. 
 
+To make sure you setup everything corectly, you can run the program in `test_mode`. This setting is found in the `config.py` file. To use it, set it to true and then run the program. This will send everyone an automated message with their name to make that their name, number and carrier is correct. Sometime it can take a few minutes for the messages to be sent so be aware of that. When you are ready for the full program to be ran, turn this mode off and everyone will recieve their assignment. 
+
 Have Fun!
