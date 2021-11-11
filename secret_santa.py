@@ -22,7 +22,6 @@ def send(message, phone_number, carrier):
 	auth = (config.EMAIL, config.APP_PASSWORD)
 
 	domain = "smtp." + str(config.EMAIL[config.EMAIL.index('@') + 1 : ])
-	print(domain)
 	# Establish a secure session with gmail's outgoing SMTP server using your gmail account
 	server = smtplib.SMTP(domain, 587 )
 	server.starttls()
@@ -31,16 +30,15 @@ def send(message, phone_number, carrier):
 	# Send text message through SMS gateway of destination number
 	server.sendmail( auth[0], to_number, message)
 
-# check if the list of names is good
+# Check if the list of names is good.
 def check_good_list(list):
 	for person in list:
 		if person["assignment"] in person["no list"]:
-			# print(person["assignment"],person["no list"])
 			return False
 		
 	return True
 
-# load data
+# Load the data.
 f = open("members.json")
 data = json.load(f)
 participants = data["people"]
@@ -71,9 +69,7 @@ def write_log():
 
 # Randomize the list of participants.
 def randomize_list(patricipants):
-	# total = len(participants)
 	participant_list = []
-	# random_list = perticipant_list
 	for person in participants:
 			participant_list.append(person["id"])
 
@@ -87,9 +83,6 @@ def randomize_list(patricipants):
 		for person in participants:
 			person["assignment"] = random_list[count]
 			count += 1
-
-		# print("check if list is good")
-		# print(random_list)
 		
 		good_list = check_good_list(participants)
 
@@ -99,7 +92,7 @@ randomize_list(participants)
 write_log()
 
 
-# compose message and send to users
+# Compose message and send to users
 for person in participants:
 	name = str(person["name"])
 	number = person["number"]
