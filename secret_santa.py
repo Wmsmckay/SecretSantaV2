@@ -14,6 +14,7 @@ carriers = {
 }
 
 year = str(datetime.now().year)
+participant_list = "members.json"
 
 # Send the message to the recipient.
 def send(message, phone_number, carrier):
@@ -39,13 +40,13 @@ def check_good_list(list):
 	return True
 
 # Load the data.
-f = open("members.json")
+f = open(participant_list)
 data = json.load(f)
 participants = data["people"]
 
 # Write to the log with each person and who they are assigned to.
 def write_log():
-	f = open("christmasNamesLog.txt", "w")
+	f = open(f"{participant_list.split('.')[0] + year}.txt", "w")
 	f.write("Christmas Names " + year + "\n\n")
 	f.write("program ran on " + str(datetime.now()))
 	f.write("\n|Giver|\t\t\t\t|Receiver|\n")
@@ -68,7 +69,7 @@ def write_log():
 	f.close
 
 # Randomize the list of participants.
-def randomize_list(patricipants):
+def randomize_list():
 	participant_list = []
 	for person in participants:
 			participant_list.append(person["id"])
@@ -88,7 +89,7 @@ def randomize_list(patricipants):
 
 
 # Do all the stuffs
-randomize_list(participants)
+randomize_list()
 write_log()
 
 
@@ -103,11 +104,12 @@ for person in participants:
 	giftIdeas = assignment["gift ideas"]
 	
 	if config.TEST_MODE:
-		message = (f"Secret Santa {year}\n\nThis automated message is a test to make sure {name.upper()} can recieve messages for Secret Santa. Please contact support if you have any questions.")
+		message = (f"Secret Santa {year}\n\nThis automated test message is to make sure {name.upper()} can receive Secret Santa. Contact 'support' if you have questions.")
 	else:
 		message = (f"Secret Santa {year}\n\nThis is an automated message. {name.upper()}, your assignment is {assignmentName.upper()}.")
 		if config.GIFT_IDEAS:
 			message = message + (f" Some gift ideas are:\n {giftIdeas}")
 
-	send(message,number,carrier)
-	time.sleep(3)
+	# send(message,number,carrier)
+	print(f"Message sent to {name}")
+	# time.sleep(5)
